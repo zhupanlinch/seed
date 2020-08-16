@@ -3,6 +3,8 @@ package com.mysiteforme.admin.entity;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.mysiteforme.admin.base.DataEntity;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 
@@ -14,11 +16,13 @@ import java.io.Serializable;
  * @author wangl
  * @since 2017-12-30
  */
+@ApiModel("网站信息")
 @TableName("sys_site")
 public class Site extends DataEntity<Site> {
 
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty("网站名称")
 	private String name;
 	private String version;
 	private String author;
@@ -33,14 +37,19 @@ public class Site extends DataEntity<Site> {
 	private String phone;
 	private String email;
 	private String address;
+	@ApiModelProperty("网站LOGO")
 	private String logo;
 	private String server;
 	private String database;
 	@TableField("max_upload")
 	private Integer maxUpload;
+	@ApiModelProperty("SEO关键字")
 	private String keywords;
+	@ApiModelProperty("SEO描述")
 	private String description;
+	@ApiModelProperty("power by 信息")
 	private String powerby;
+	@ApiModelProperty("备案号")
 	private String record;
 	/**
 	 * 网站网址
