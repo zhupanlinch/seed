@@ -51,6 +51,8 @@ SpringBoot应用种子项目，开发新项目可以直接复制该工程在上�
 * 启动类： `MysiteformeApplication`
 * 管理后台:`http://localhost:8080`
 * Swagger-ui:`http://localhost:8080/swagger-ui.html`
+* 前端入口：`http://localhost:8080/front`
+* 静态前端：`http://localhost:8080/front/index.html`
 * 系统管理员用户名：`admin` 密码：`123456`
 
 

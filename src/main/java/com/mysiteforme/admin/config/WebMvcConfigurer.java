@@ -49,6 +49,10 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/swagger-resources/**").addResourceLocations("classpath:/META-INF/resources/swagger-resources/");
+        registry.addResourceHandler("/swagger/**").addResourceLocations("classpath:/META-INF/resources/swagger/");
+        registry.addResourceHandler("/v2/api-docs/**").addResourceLocations("classpath:/META-INF/resources/v2/api-docs/");
+        registry.addResourceHandler("/front/**").addResourceLocations("classpath:/front/");
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
         super.addResourceHandlers(registry);
     }
@@ -106,7 +110,9 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyHandlerInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login","/login/main","/logout","/genCaptcha","/static/**","/showBlog/**");
+                .excludePathPatterns("/login","/login/main","/logout","/genCaptcha","/static/**","/showBlog/**",
+                        "/api/**", "/swagger-ui.html", "/webjars/**", "/swagger-resources/**", "/swagger/**",
+                        "/v2/api-docs/**", "/front/**");
         registry.addInterceptor(new BlogHandlerInterceptor())
                 .addPathPatterns("/showBlog/**");
         super.addInterceptors(registry);
